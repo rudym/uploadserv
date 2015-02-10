@@ -30,6 +30,7 @@ var apiController = require('./controllers/api');
 var contactController = require('./controllers/contact');
 var aboutController = require('./controllers/about');
 var uploadController = require('./controllers/upload');
+var scriptController = require('./controllers/script');
 
 /**
  * API keys and Passport configuration.
@@ -114,6 +115,7 @@ app.get('/account/unlink/:provider', passportConf.isAuthenticated, userControlle
 app.get('/about', aboutController.getAbout);
 app.get('/upload', uploadController.getUpload);
 app.post('/upload', uploadController.postUpload);
+app.get('/script', scriptController.getScript);
 
 /**
  * API examples routes.

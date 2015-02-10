@@ -1,16 +1,5 @@
 extends layout
 
 block content
-  // Section: intro
-  section#intro.intro
-    .slogan
-      h2
-        | WELCOME TO 
-        span.text_color INNER LOVE
-      |                 
-      h4 WE ARE GROUP OF PEOPLE WHO MAKING AWESOME MOVIE
-    |             
-    .page-scroll
-      a.btn.btn-circle(href='#service')
-        i.fa.fa-angle-double-down.animated
-  // /Section: intro
+  include intro
+  include about

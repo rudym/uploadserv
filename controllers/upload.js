@@ -1,8 +1,11 @@
+var File = require('../models/File');
+
 /**
  * GET /upload
  * Upload form page.
  */
 exports.getUpload = function(req, res) {
+  if (req.user) return res.redirect('/');
   res.render('upload', {
     title: 'Upload'
   });
