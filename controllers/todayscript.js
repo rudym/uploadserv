@@ -11,7 +11,7 @@ exports.getScript = function(req, res) {
   	if (err) return next(err);
 
   	if (!script) {
-        script = new Script({ name: 'My Script Name 2', calendarDate: Date(), text: 'Big long text of the script...' });
+        script = new Script({ name: 'My Script Name 2', calendarDate: new Date(), text: 'Big long text of the script...' });
         script.save(function (err) {
         if (err) return next(err);
         // saved!

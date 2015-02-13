@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  // Section: user_videos
+  .h1 Hi
+  form.form-horizontal
+    input(type='hidden', name='_csrf', value=_csrf)
+    .div
+    for video in videos
+      .form-group
+        label.col-sm-2.control-label(for='Name') Video Name
+        .col-sm-4
+          input.form-control(type='text', value='#{video.name}')
+      .form-group
+        label.col-sm-2.control-label(for='text') File location
+        .col-sm-4
+          textarea.form-control(type='text') #{video.filelocation}
+  // /Section: user_videos

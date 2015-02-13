@@ -31,6 +31,9 @@ var contactController = require('./controllers/contact');
 var aboutController = require('./controllers/about');
 var uploadController = require('./controllers/upload');
 var scriptController = require('./controllers/script');
+var todayscriptController = require('./controllers/todayscript');
+var usrvideosController = require('./controllers/usrvideos');
+var mainController = require('./controllers/main');
 
 /**
  * API keys and Passport configuration.
@@ -96,6 +99,7 @@ app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }))
  * Primary app routes.
  */
 app.get('/', homeController.index);
+app.get('/main', passportConf.isAuthenticated, mainController.index);
 app.get('/login', userController.getLogin);
 app.post('/login', userController.postLogin);
 app.get('/logout', userController.logout);
@@ -113,9 +117,11 @@ app.post('/account/password', passportConf.isAuthenticated, userController.postU
 app.post('/account/delete', passportConf.isAuthenticated, userController.postDeleteAccount);
 app.get('/account/unlink/:provider', passportConf.isAuthenticated, userController.getOauthUnlink);
 app.get('/about', aboutController.getAbout);
-app.get('/upload', uploadController.getUpload);
-app.post('/upload', uploadController.postUpload);
+app.get('/upload', passportConf.isAuthenticated, uploadController.getUpload);
+app.post('/upload', passportConf.isAuthenticated, uploadController.postUpload);
 app.get('/script', scriptController.getScript);
+app.get('/todayscript', todayscriptController.getScript);
+app.get('/usrvideos', passportConf.isAuthenticated, usrvideosController.getVideos);
 
 /**
  * API examples routes.

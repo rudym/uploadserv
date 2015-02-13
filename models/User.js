@@ -1,6 +1,7 @@
 var bcrypt = require('bcrypt-nodejs');
 var crypto = require('crypto');
 var mongoose = require('mongoose');
+var Video = require('../models/Video');
 
 var userSchema = new mongoose.Schema({
   email: { type: String, unique: true, lowercase: true },
@@ -23,7 +24,9 @@ var userSchema = new mongoose.Schema({
   },
 
   resetPasswordToken: String,
-  resetPasswordExpires: Date
+  resetPasswordExpires: Date,
+
+  videos: [Video.Schema]
 });
 
 /**

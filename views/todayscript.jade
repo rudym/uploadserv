@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  .page-header
+    h3 Today script
+  // Section: script
+  form.form-horizontal
+    input(type='hidden', name='_csrf', value=_csrf)
+    .form-group
+      label.col-sm-2.control-label(for='chapterName') Chapter Name
+      .col-sm-4
+        input.form-control(type='text', name='chapterName', id='chapterName', value='#{script.chapterName}')
+    .form-group
+      label.col-sm-2.control-label(for='text') Text
+      .col-sm-4
+        textarea.form-control(type='text', name='text', id='text') #{script.text}
+  // /Section: script
