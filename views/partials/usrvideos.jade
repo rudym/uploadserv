@@ -1,0 +1,24 @@
+block content
+  .page-header
+    h3 My Scenes
+  // Section: user_videos
+  form.form-horizontal
+    input(type='hidden', name='_csrf', value=_csrf)
+    for video in videos
+      .form-group
+        label.col-sm-2.control-label(for='Name') Video Name
+        .col-sm-4
+          input.form-control(type='text', value='#{video.name}')
+      .form-group
+        label.col-sm-2.control-label(for='text') File location
+        .col-sm-4
+          textarea.form-control(type='text') #{video.filelocation}
+      .form-group
+        video#example_video_1.video-js.vjs-default-skin.vjs-big-play-centered(controls='', preload='auto', width='640', height='264', poster='', data-setup='{"example_option":true}')
+          source(src='http://frigg:3000/test.MOV', type='video/mp4')
+          //source(src='http://video-js.zencoder.com/oceans-clip.webm', type='video/webm')
+          //source(src='http://video-js.zencoder.com/oceans-clip.ogv', type='video/ogg')
+          p.vjs-no-js
+            | To view this video please enable JavaScript, and consider upgrading to a web browser that 
+            a(href='http://videojs.com/html5-video-support/', target='_blank') supports HTML5 video
+  // /Section: user_videos

@@ -4,21 +4,26 @@ var Script = require('../models/Script');
  * GET /script
  * Script page.
  */
-exports.getScript = function(req, res) {
-  if (req.user) return res.redirect('/');
-
+exports.getScript = function(req, res, next) {
   Script.findOne(function(err, script) {
-  	if (err) return next(err);
+    if (err) return next(err);
 
-  	if (!script) {
-        script = new Script({ name: 'My Script Name 2', calendarDate: new Date(), text: 'Big long text of the script...' });
-        script.save(function (err) {
+    if (!script) {
+      script = new Script({
+        name: 'Test Script Name',
+        chaptername: 'Test chapter name',
+        duedate: Date(),
+        posted: Date(),
+        text: 'Big long text of the script...'
+      });
+      
+      script.save(function (err) {
         if (err) return next(err);
         // saved!
       });
     }
 
-    res.render('script', {
+    res.render('todayscript', {
       title: 'Script',
       "script" : script
     });
@@ -30,7 +35,6 @@ exports.getScript = function(req, res) {
  * All Accessible Scripts page.
  */
 exports.getScripts = function(req, res) {
-  if (req.user) return res.redirect('/');
   res.render('scripts', {
     title: 'All Accessible Scripts'
   });

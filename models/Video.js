@@ -1,20 +1,22 @@
 var crypto = require('crypto');
 var mongoose = require('mongoose');
+//var Comment = require('../models/Comment');
 var ObjectId = mongoose.Schema.ObjectId;
 
 var videoSchema = new mongoose.Schema({
-  scriptId: ObjectId,  
+  _creator : { type: ObjectId, ref: 'User' },
+  _script : { type: ObjectId, ref: 'Script' },
   name: String,
   filelocation: String,
-  uploadDate: Date
-});
+  posted: Date,
+  /*userswholiked: [ { 
+  	userId: {type: ObjectId, unique: true},
+  	username: String }
+  ],*/
+  likes: { type: Number, default: 0 },
+  rating: { type: Number, default: 0 },
 
-/**
- * Helper method for getting file's thumbnail.
- */
-videoSchema.methods.thumbnail = function() {
-  var md5 = crypto.createHash('md5').update(this.name).digest('hex');
-  return 'https://thumbnail' + md5;
-};
+  comments: [ { type: ObjectId, ref: 'Comment' } ]
+});
 
 module.exports = mongoose.model('Video', videoSchema);
