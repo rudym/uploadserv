@@ -35,6 +35,9 @@ var todayscriptController = require('./controllers/todayscript');
 var usrvideosController = require('./controllers/usrvideos');
 var mainController = require('./controllers/main');
 
+
+var testdataController = require('./controllers/testdata');
+
 /**
  * API keys and Passport configuration.
  */
@@ -122,6 +125,8 @@ app.post('/upload', passportConf.isAuthenticated, uploadController.postUpload);
 app.get('/script', scriptController.getScript);
 app.get('/todayscript', todayscriptController.getScript);
 app.get('/usrvideos', passportConf.isAuthenticated, usrvideosController.getVideos);
+
+app.get('/loadtestdata', passportConf.isAuthenticated, testdataController.load);
 
 /**
  * API examples routes.

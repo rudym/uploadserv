@@ -2,10 +2,20 @@ block content
   .page-header
     h3 Upload your cut
   // Section: upload
-  form(enctype='multipart/form-data')
-      input(type='hidden', name='_csrf', value=_csrf)
-      input(name='file', type='file')
-      input(type='button', value='Upload')
+  form#uploadForm(action='upload', method='POST', enctype='multipart/form-data').form-horizontal
+    input(type='hidden', name='_csrf', value=_csrf)
+    .form-group
+      .col-sm-4
+        select(name='_script').form-control
+          for script in scripts 
+            option(value='#{script._id}') '#{script.chaptername}'
+              //input(type='hidden', name='_script', value='#{script._id}') 
+    .form-group
+      .col-sm-4     
+        //input.form-control(name='_script', type='text')
+        input.form-control(name='videoname', type='text')
+        input.form-control(name='file', type='file')
+        input.form-control(type='submit', value='Upload')
     progress
-  != js('upload')
+    //!= js('upload')
   // /Section: upload

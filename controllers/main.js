@@ -7,34 +7,10 @@ var Video = require('../models/Video');
  * Home page.
  */
 exports.index = function(req, res) {
-  User.findById(req.user.id)
-  .populate('videos')
-  .exec(function(err, user) {
-
+  Video.find({'_creator': req.user.id})
+  .populate('_script', 'chaptername')
+  .exec(function(err, videos) {
     if (err) return next(err);
-
-    if (user.videos.length == 0) {
-      Script.findOne(function(err, script) {
-        if (err) return next(err);
-
-        var video = new Video({
-          _creator: user._id,
-          _script: script._id,  
-          name: "My test video",
-          filelocation: "http://frigg:3000/test.MOV",
-          uploadDate: Date() });
-        video.save(function (err) {
-          if (err) return next(err);
-          // saved!
-        });
-
-        user.videos.push(video);
-        user.save(function (err) {
-          if (err) return next(err);
-          // saved!
-        });
-      });      
-    }
 
     Script.findOne(function(err, script) {
       if (err) return next(err);
@@ -54,11 +30,16 @@ exports.index = function(req, res) {
         });
       }
 
-      res.render('main', {
-        title: 'Home',
-        "videos" : user.videos, //[{name: "The name", filelocation: "HelloLocation"}]
-        "script" : script
-      });
+      Script.find(function(err, scripts) {
+        if (err) return next(err);
+
+        res.render('main', {
+          title: 'Home',
+          "videos" : videos, //[{name: "The name", filelocation: "HelloLocation"}]
+          "script" : script,
+          "scripts" : scripts
+        });
+      });      
     });
   });
 };

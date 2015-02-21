@@ -10,9 +10,9 @@ block content
         .col-sm-4
           input.form-control(type='text', value='#{video.name}')
       .form-group
-        label.col-sm-2.control-label(for='text') File location
+        label.col-sm-2.control-label(for='text') Chaptername
         .col-sm-4
-          textarea.form-control(type='text') #{video.filelocation}
+          textarea.form-control(type='text') #{video._script.chaptername}
       .form-group
         video#example_video_1.video-js.vjs-default-skin.vjs-big-play-centered(controls='', preload='auto', width='640', height='264', poster='', data-setup='{"example_option":true}')
           source(src='http://frigg:3000/test.MOV', type='video/mp4')

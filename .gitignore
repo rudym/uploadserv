@@ -19,4 +19,5 @@ node_modules
 *.iml
 .DS_Store
 Thumbs.db
-test.MOV
+*.MOV
+uploads

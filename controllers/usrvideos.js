@@ -42,38 +42,16 @@ function GetVideosByUser(user_id, next) {
  * User videos page.
  */
 exports.getVideos = function(req, res, next) {
-  User.findById(req.user.id)
-  .populate('videos')
-  .exec(function(err, user) {
-
+  Video.find({'_creator': req.user.id})
+  .populate('_script', 'chaptername')
+  .exec(function(err, videos) {
     if (err) return next(err);
 
-    if (user.videos.length == 0) {
-      Script.findOne(function(err, script) {
-        if (err) return next(err);
+    console.log('Video script data {0} ', videos[0]._script);
 
-        var video = new Video({
-          _creator: user._id,
-          _script: script._id,  
-          name: "My test video",
-          filelocation: "http://frigg:3000/test.MOV",
-          uploadDate: Date() });
-        video.save(function (err) {
-          if (err) return next(err);
-          // saved!
-        });
-
-        user.videos.push(video);
-        user.save(function (err) {
-          if (err) return next(err);
-          // saved!
-        });
-      });      
-    }
-  
     res.render('usrvideos', {
       title: 'User videos',
-      "videos" : user.videos //[{name: "The name", filelocation: "HelloLocation"}]
+      "videos" : videos //[{name: "The name", filelocation: "HelloLocation"}]
     });
   });
 };

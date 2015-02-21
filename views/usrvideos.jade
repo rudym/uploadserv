@@ -6,6 +6,7 @@ block content
   form.form-horizontal
     input(type='hidden', name='_csrf', value=_csrf)
     for video in videos
+      input(type='hidden', name='_video', value='#{video._id}')
       .form-group
         label.col-sm-2.control-label(for='Name') Video Name
         .col-sm-4

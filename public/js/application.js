@@ -17,3 +17,4 @@
 //= require lib/bootstrap.min
 //= require video-js/video
 //= require main
+//= require upload
