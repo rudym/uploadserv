@@ -31,6 +31,15 @@ html
 
     link(href='js/video-js/video-js.css', rel='stylesheet')
 
+    //Creative Button Styles BEGIN
+    link(rel='shortcut icon', href='../favicon.ico')
+    link(rel='stylesheet', type='text/css', href='css/default.css')
+    link(rel='stylesheet', type='text/css', href='css/component.css')
+    script(src='js/modernizr.custom.js')
+    //Creative Button Styles END
+    
+    != js('application')
+
   body#page-top(data-spy='scroll', data-target='.navbar-custom')
      
     include partials/navbar
@@ -40,4 +49,4 @@ html
 
     include partials/footer
 
-    != js('application')
+    

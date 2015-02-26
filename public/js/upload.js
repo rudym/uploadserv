@@ -1,4 +1,4 @@
-console.log("Hello upload!");
+//console.log("Hello upload!");
 
 var beforeSendHandler = function () {console.log("beforeSendHandler")};
 var completeHandler = function () {console.log("completeHandler")};
@@ -132,6 +132,6 @@ $('#uploadForm').submit(function(e)
  
     });
  
-  }   
+  }
 });
 //$("#multiform").submit();

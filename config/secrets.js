@@ -18,6 +18,11 @@
 
  * IMPORTANT  IMPORTANT  IMPORTANT  IMPORTANT  IMPORTANT  IMPORTANT  IMPORTANT
  */
+//mongo --username web --password saxQWE12 --host mongodb-0.innerlove.3228.mongodbdns.com --port 27000
+//mongodb://[<username>:<password>@]hostname0<:port>[,hostname1:<port1>][,hostname2:<port2>][...][,hostnameN:<portN>]
+//mongodb://koding:koding2014@dogen.mongohq.com:10089/freemongo
+//mongodb://web:saxQWE12@mongodb-0.innerlove.3228.mongodbdns.com:27000,mongodb-1.innerlove.3228.mongodbdns.com:27000,mongodb-2.innerlove.3228.mongodbdns.com:27000/innerlove
+//mongodb://tester:saxQWE12@mongodb-0.innerlove.3228.mongodbdns.com:27000,mongodb-1.innerlove.3228.mongodbdns.com:27000,mongodb-2.innerlove.3228.mongodbdns.com:27000
 
 module.exports = {
 

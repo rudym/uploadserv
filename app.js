@@ -34,6 +34,7 @@ var scriptController = require('./controllers/script');
 var todayscriptController = require('./controllers/todayscript');
 var usrvideosController = require('./controllers/usrvideos');
 var mainController = require('./controllers/main');
+var subscribeController = require('./controllers/subscribe');
 
 
 var testdataController = require('./controllers/testdata');
@@ -125,6 +126,7 @@ app.post('/upload', passportConf.isAuthenticated, uploadController.postUpload);
 app.get('/script', scriptController.getScript);
 app.get('/todayscript', todayscriptController.getScript);
 app.get('/usrvideos', passportConf.isAuthenticated, usrvideosController.getVideos);
+app.post('/subscribe', subscribeController.subscribe);
 
 app.get('/loadtestdata', passportConf.isAuthenticated, testdataController.load);
 
