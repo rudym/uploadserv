@@ -103,7 +103,7 @@ app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }))
  * Primary app routes.
  */
 app.get('/', homeController.index);
-app.get('/main', passportConf.isAuthenticated, mainController.index);
+/*app.get('/main', passportConf.isAuthenticated, mainController.index);
 app.get('/login', userController.getLogin);
 app.post('/login', userController.postLogin);
 app.get('/logout', userController.logout);
@@ -125,15 +125,15 @@ app.get('/upload', passportConf.isAuthenticated, uploadController.getUpload);
 app.post('/upload', passportConf.isAuthenticated, uploadController.postUpload);
 app.get('/script', scriptController.getScript);
 app.get('/todayscript', todayscriptController.getScript);
-app.get('/usrvideos', passportConf.isAuthenticated, usrvideosController.getVideos);
+app.get('/usrvideos', passportConf.isAuthenticated, usrvideosController.getVideos);*/
 app.post('/subscribe', subscribeController.subscribe);
 
-app.get('/loadtestdata', passportConf.isAuthenticated, testdataController.load);
+/*app.get('/loadtestdata', passportConf.isAuthenticated, testdataController.load);*/
 
 /**
  * API examples routes.
  */
-app.get('/api', apiController.getApi);
+/*app.get('/api', apiController.getApi);
 app.get('/api/lastfm', apiController.getLastfm);
 app.get('/api/nyt', apiController.getNewYorkTimes);
 app.get('/api/aviary', apiController.getAviary);
@@ -161,11 +161,11 @@ app.get('/api/paypal', apiController.getPayPal);
 app.get('/api/paypal/success', apiController.getPayPalSuccess);
 app.get('/api/paypal/cancel', apiController.getPayPalCancel);
 app.get('/api/lob', apiController.getLob);
-
+*/
 /**
  * OAuth authentication routes. (Sign in)
  */
-app.get('/auth/instagram', passport.authenticate('instagram'));
+/*app.get('/auth/instagram', passport.authenticate('instagram'));
 app.get('/auth/instagram/callback', passport.authenticate('instagram', { failureRedirect: '/login' }), function(req, res) {
   res.redirect(req.session.returnTo || '/');
 });
@@ -188,12 +188,12 @@ app.get('/auth/twitter/callback', passport.authenticate('twitter', { failureRedi
 app.get('/auth/linkedin', passport.authenticate('linkedin', { state: 'SOME STATE' }));
 app.get('/auth/linkedin/callback', passport.authenticate('linkedin', { failureRedirect: '/login' }), function(req, res) {
   res.redirect(req.session.returnTo || '/');
-});
+});*/
 
 /**
  * OAuth authorization routes. (API examples)
  */
-app.get('/auth/foursquare', passport.authorize('foursquare'));
+/*app.get('/auth/foursquare', passport.authorize('foursquare'));
 app.get('/auth/foursquare/callback', passport.authorize('foursquare', { failureRedirect: '/api' }), function(req, res) {
   res.redirect('/api/foursquare');
 });
@@ -205,7 +205,7 @@ app.get('/auth/venmo', passport.authorize('venmo', { scope: 'make_payments acces
 app.get('/auth/venmo/callback', passport.authorize('venmo', { failureRedirect: '/api' }), function(req, res) {
   res.redirect('/api/venmo');
 });
-
+*/
 /**
  * Error Handler.
  */

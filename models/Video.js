@@ -1,4 +1,3 @@
-var crypto = require('crypto');
 var mongoose = require('mongoose');
 //var Comment = require('../models/Comment');
 var ObjectId = mongoose.Schema.ObjectId;
@@ -8,7 +7,6 @@ var videoSchema = new mongoose.Schema({
   _script : { type: ObjectId, ref: 'Script' },
   name: String,
   filelocation: String,
-  posted: Date,
   /*userswholiked: [ { 
   	userId: {type: ObjectId, unique: true},
   	username: String }
