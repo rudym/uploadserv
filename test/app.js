@@ -1,5 +1,7 @@
 var request = require('supertest');
+var cheerio = require('cheerio');
 var app = require('../app.js');
+
 
 describe('GET /', function() {
   it('should return 200 OK', function(done) {
@@ -9,7 +11,34 @@ describe('GET /', function() {
   });
 });
 
-describe('GET /login', function() {
+describe('POST /subscribe', function() {
+  it('should subscribe', function(done) {
+    request(app)
+      .get('/')
+      .end(function(err, res){
+        $ = cheerio.load(res.text);
+        var csrf = $('input[name=_csrf]').val();
+        
+        request(app)
+          .post('/subscribe')
+          .set('cookie', res.headers['set-cookie'])
+          .send({ 
+            _csrf: csrf,
+            email: 'test@email.com'
+          })
+          .expect(200, 'OK')
+          .end(function(err, res){
+            if(err) {
+              done(err);
+            } else {
+              done();
+            }
+          });
+      });
+  });
+});
+
+/*describe('GET /login', function() {
   it('should return 200 OK', function(done) {
     request(app)
       .get('/login')
@@ -39,7 +68,7 @@ describe('GET /contact', function() {
       .get('/contact')
       .expect(200, done);
   });
-});
+});*/
 
 describe('GET /random-url', function() {
   it('should return 404', function(done) {
