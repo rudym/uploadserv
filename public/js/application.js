@@ -19,4 +19,4 @@
 //= require lib/jquery.scrollTo
 //= require lib/wow.min
 //= require video-js/video
-//= require main
+//= require main.min

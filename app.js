@@ -21,6 +21,19 @@ var passport = require('passport');
 var expressValidator = require('express-validator');
 var connectAssets = require('connect-assets');
 
+var fs = require('fs');
+var UglifyJS = require("uglify-js");
+
+/**
+ * Minifying javascript.
+ */
+var jsresult = UglifyJS.minify([ "./public/js/main.js" ]);
+fs.writeFile('./public/js/main.min.js', jsresult.code, function (err) {
+  if(err) {
+    console.log(err);
+  } //else {    console.log("Script generated and saved:", 'main.min.js');  }      
+});
+
 /**
  * Controllers (route handlers).
  */
