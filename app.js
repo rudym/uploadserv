@@ -27,7 +27,15 @@ var UglifyJS = require("uglify-js");
 /**
  * Minifying javascript.
  */
-var jsresult = UglifyJS.minify([ "./public/js/main.js" ]);
+var jsresult = UglifyJS.minify([ 
+  "./public/js/lib/jquery-2.1.3.min.js",
+  "./public/js/bootstrap.min.js",
+  "./public/js/lib/jquery.easing.min.js",
+  "./public/js/lib/jquery.scrollTo.js",
+  "./public/js/lib/wow.min.js",
+  "./public/js/video-js/video.js",
+  "./public/js/main.js" ]);
+
 fs.writeFile('./public/js/main.min.js', jsresult.code, function (err) {
   if(err) {
     console.log(err);
