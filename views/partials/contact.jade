@@ -1,0 +1,65 @@
+// Section: contact
+section#contact.home-section.text-center
+  .heading-contact
+    .container
+      .row
+        .col-lg-8.col-lg-offset-2
+          .wow.bounceInDown(data-wow-delay='0.4s')
+            .section-heading
+              h2 subscribe to news
+              i.fa.fa-2x.fa-angle-down
+  .container
+    .row
+      .col-lg-2.col-lg-offset-5
+        hr.marginbot-50
+    .row
+      .col-lg-8
+        .boxed-grey
+          form#subscribeBox.form-horizontal(action='subscribe', method='post')
+            input(type='hidden', name='_csrf', value=_csrf)
+            .row
+              .col-md-6
+                .form-group
+                  label.control-label.sr-only(for='email') Email Address
+                  .input-group
+                    span.input-group-addon @
+                    input#email.form-control(type='email', name='email', placeholder='Email', autofocus=true, aria-describedby='emailStatus')                    
+                  span.glyphicon.glyphicon-ok.form-control-feedback(aria-hidden='true')
+                  span.glyphicon.glyphicon-remove.form-control-feedback(aria-hidden='true')
+              .col-md-12
+                p.result-block You have successfully subscribed.
+                button#btnSubscribe.btn.btn-skin.pull-right(type='submit')
+                  | OK
+      .col-lg-4
+        .widget-contact
+          h5 Main Office
+          address
+            strong Inner Love, GmBh.
+            br
+            | 				  Tower 795 Folsom Ave, Beautiful Suite 600
+            br
+            | 				  San Francisco, CA 94107
+            br
+            abbr(title='Phone') P:
+            |  (123) 456-7890
+          address
+            strong Email
+            br
+            a(href='mailto:#') email@innerlove.com
+          address
+            strong We're on social networks
+            br
+            ul.company-social
+              li.social-facebook
+                a(href='#', target='_blank')
+                  i.fa.fa-facebook
+              li.social-twitter
+                a(href='#', target='_blank')
+                  i.fa.fa-twitter
+              li.social-dribble
+                a(href='#', target='_blank')
+                  i.fa.fa-dribbble
+              li.social-google
+                a(href='#', target='_blank')
+                  i.fa.fa-google-plus
+// /Section: contact

@@ -14,6 +14,9 @@
  */
 
 //= require lib/jquery-2.1.3.min
-//= require lib/bootstrap.min
+//= require bootstrap.min
+//= require lib/jquery.easing.min
+//= require lib/jquery.scrollTo
+//= require lib/wow.min
 //= require video-js/video
 //= require main

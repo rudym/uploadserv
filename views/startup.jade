@@ -1,0 +1,302 @@
+extends layout
+
+block content
+  // Preloader
+  #preloader
+    #load
+  nav.navbar.navbar-custom.navbar-fixed-top(role='navigation')
+    .container
+      .navbar-header.page-scroll
+        button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-main-collapse')
+          i.fa.fa-bars
+        a.navbar-brand(href='index-20115-03-02_01.html')
+          h1 INNER LOVE
+      // Collect the nav links, forms, and other content for toggling
+      .collapse.navbar-collapse.navbar-right.navbar-main-collapse
+        ul.nav.navbar-nav
+          li.active
+            a(href='#intro') Home
+          li
+            a(href='#about') About
+          li
+            a(href='#service') Join
+          li
+            a(href='#filmtodayblock') Film Today
+          li
+            a(href='#photoblock') New Script
+          li.dropdown
+            a.dropdown-toggle(href='#', data-toggle='dropdown')
+              | My movie
+              b.caret
+            ul.dropdown-menu
+              li
+                a(href='#') Login
+              li
+                a(href='#') Rates
+              li
+                a(href='#') Upload New Video
+      // /.navbar-collapse
+    // /.container
+  // Section: intro
+  section#intro.intro
+    .container
+      .row
+        .col-lg-4.col-lg-offset-4
+          .LOGO
+            img.img-responsive(src='img/IL-Logo-White.png', alt='')
+    .slogan
+      h2
+        | WELCOME TO 
+        span.text_color INNER LOVE
+      h4 WE ARE PEOPLE WHO MAKING AWESOME MOVIE
+    .page-scroll
+      a.btn.btn-circle(href='#service')
+        i.fa.fa-angle-double-down.animated
+  // /Section: intro
+  // Section: about
+  section#about.home-section.text-center
+    .heading-about
+      .container
+        .row
+          .col-lg-8.col-lg-offset-2
+            .wow.bounceInDown(data-wow-delay='0.4s')
+              .section-heading
+                h2 About US
+                i.fa.fa-2x.fa-angle-down
+    .container
+      .row
+        .col-lg-2.col-lg-offset-5
+          hr.marginbot-50
+      .row
+        .col-xs-6.col-sm-3.col-md-3
+          .wow.bounceInUp(data-wow-delay='0.2s')
+            .team.boxed-grey
+              .inner
+                h5 Anna Hanaceck
+                p.subtitle Wagenburg, Belgium
+                .avatar
+                  img.img-responsive.img-circle(src='img/team/1.jpg', alt='')
+        .col-xs-6.col-sm-3.col-md-3
+          .wow.bounceInUp(data-wow-delay='0.5s')
+            .team.boxed-grey
+              .inner
+                h5 Maura Daniels
+                p.subtitle Santa Monica, USA
+                .avatar
+                  img.img-responsive.img-circle(src='img/team/2.jpg', alt='')
+        .col-xs-6.col-sm-3.col-md-3
+          .wow.bounceInUp(data-wow-delay='0.8s')
+            .team.boxed-grey
+              .inner
+                h5 Jack Briane
+                p.subtitle Sidney, Australia
+                .avatar
+                  img.img-responsive.img-circle(src='img/team/3.jpg', alt='')
+        .col-xs-6.col-sm-3.col-md-3
+          .wow.bounceInUp(data-wow-delay='1s')
+            .team.boxed-grey
+              .inner
+                h5 Tom Petterson
+                p.subtitle Mali, Maldives
+                .avatar
+                  img.img-responsive.img-circle(src='img/team/4.jpg', alt='')
+  // /Section: about
+  // Section: services
+  section#service.home-section.text-center.bg-gray
+    .heading-about
+      .container
+        .row
+          .col-lg-8.col-lg-offset-2
+            .wow.bounceInDown(data-wow-delay='0.4s')
+              .section-heading
+                h2 How To Join
+                i.fa.fa-2x.fa-angle-down
+    .container
+      .row
+        .col-lg-2.col-lg-offset-5
+          hr.marginbot-50
+      .row
+        .col-sm-3.col-md-3
+          .wow.fadeInLeft(data-wow-delay='0.2s')
+            .service-box
+              .service-icon
+                img(src='img/icons/service-icon-1.png', alt='')
+              .service-desc
+                h5 Create Account
+                p
+                  | Vestibulum tincidunt enim in pharetra malesuada. Duis semper magna metus electram accommodare.
+        .col-sm-3.col-md-3
+          .wow.fadeInUp(data-wow-delay='0.2s')
+            .service-box
+              .service-icon
+                img(src='img/icons/service-icon-2.png', alt='')
+              .service-desc
+                h5 Like Other Video
+                p
+                  | Vestibulum tincidunt enim in pharetra malesuada. Duis semper magna metus electram accommodare.
+        .col-sm-3.col-md-3
+          .wow.fadeInUp(data-wow-delay='0.2s')
+            .service-box
+              .service-icon
+                img(src='img/icons/service-icon-3.png', alt='')
+              .service-desc
+                h5 Make Your Video
+                p
+                  | Vestibulum tincidunt enim in pharetra malesuada. Duis semper magna metus electram accommodare.
+        .col-sm-3.col-md-3
+          .wow.fadeInRight(data-wow-delay='0.2s')
+            .service-box
+              .service-icon
+                img(src='img/icons/service-icon-4.png', alt='')
+              .service-desc
+                h5 Pay And Upload
+                p
+                  | Vestibulum tincidunt enim in pharetra malesuada. Duis semper magna metus electram accommodare.
+  // /Section: services
+  // Section: video block
+  section#filmtodayblock.home-section.text-center.bg-gray
+    .heading-about
+      .container
+        .row
+          .col-lg-8.col-lg-offset-2
+            .wow.bounceInDown(data-wow-delay='0.4s')
+              .section-heading
+                h2 Film Today
+                i.fa.fa-2x.fa-angle-down
+    .container
+      .row
+        .container
+          .row
+            p
+              a(href='https://www.youtube.com/embed/AZN_adSbyvo', frameborder='0') View Full Screen 
+            hr
+          // .row
+        // ./container
+        .container
+          .row
+            .col-md-12
+              .vid
+                iframe(width='560', height='315', src='https://www.youtube.com/embed/AZN_adSbyvo', frameborder='0', allowfullscreen='')
+              // ./vid
+            // .col
+          // ./row
+        // ./container
+  // /Section:  video block
+  // Section: new week script block
+  section#photoblock.home-section.text-center
+    .heading-about
+      .container
+        .row
+          .col-lg-8.col-lg-offset-2
+            .wow.bounceInDown(data-wow-delay='0.4s')
+              .section-heading
+                h2 New Week Script
+                i.fa.fa-2x.fa-angle-down
+    .container
+      .row
+        | There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+  // /Section: new week script block
+  // Section: contact
+  section#contact.home-section.text-center
+    .heading-contact
+      .container
+        .row
+          .col-lg-8.col-lg-offset-2
+            .wow.bounceInDown(data-wow-delay='0.4s')
+              .section-heading
+                h2 subscribe to news
+                i.fa.fa-2x.fa-angle-down
+    .container
+      .row
+        .col-lg-2.col-lg-offset-5
+          hr.marginbot-50
+      .row
+        .col-lg-8
+          .boxed-grey
+            form#contact-form
+              .row
+                .col-md-6
+                  .form-group
+                    label(for='name')
+                      | Name
+                    input#name.form-control(type='text', placeholder='Enter name', required='')
+                  .form-group
+                    label(for='email')
+                      | Email Address
+                    .input-group
+                      span.input-group-addon
+                        span.glyphicon.glyphicon-envelope
+                      input#email.form-control(type='email', placeholder='Enter email', required='')
+                  //
+                    <div class="form-group">
+                    <label for="subject">
+                    Payment Method
+                    </label>
+                    <select id="subject" name="subject" class="form-control" required="required">
+                    <option value="na" selected="">Choose One:</option>
+                    <option value="service">PayPal</option>
+                    <option value="suggestions">Webmoney</option>
+                    <option value="product">Card</option>
+                    </select>
+                    </div>
+                .col-md-12
+                  //
+                    <div class="form-group">
+                    <label for="name">
+                    Terms and conditions
+                    </label>
+                    <textarea name="message" id="message" class="form-control" rows="9" cols="25" required placeholder="There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc."></textarea>
+                    </div>
+                .col-md-12
+                  button#btnContactUs.btn.btn-skin.pull-right(type='submit')
+                    | OK
+        .col-lg-4
+          .widget-contact
+            h5 Main Office
+            address
+              strong Inner Love, GmBh.
+              br
+              | 				  Tower 795 Folsom Ave, Beautiful Suite 600
+              br
+              | 				  San Francisco, CA 94107
+              br
+              abbr(title='Phone') P:
+              |  (123) 456-7890
+            address
+              strong Email
+              br
+              a(href='mailto:#') email@innerlove.com
+            address
+              strong We're on social networks
+              br
+              ul.company-social
+                li.social-facebook
+                  a(href='#', target='_blank')
+                    i.fa.fa-facebook
+                li.social-twitter
+                  a(href='#', target='_blank')
+                    i.fa.fa-twitter
+                li.social-dribble
+                  a(href='#', target='_blank')
+                    i.fa.fa-dribbble
+                li.social-google
+                  a(href='#', target='_blank')
+                    i.fa.fa-google-plus
+  // /Section: contact
+  footer
+    .container
+      .row
+        .col-md-12.col-lg-12
+          .wow.shake(data-wow-delay='0.4s')
+            .page-scroll.marginbot-30
+              a#totop.btn.btn-circle(href='#intro')
+                i.fa.fa-angle-double-up.animated
+          p © Copyright 2015 - Inner Love. All rights reserved.
+  // Core JavaScript Files
+  script(src='js/jquery.min.js')
+  script(src='js/bootstrap.min.js')
+  script(src='js/jquery.easing.min.js')
+  script(src='js/jquery.scrollTo.js')
+  script(src='js/wow.min.js')
+  // Custom Theme JavaScript
+  script(src='js/custom.js')
