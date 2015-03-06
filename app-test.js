@@ -21,13 +21,12 @@ var passport = require('passport');
 var expressValidator = require('express-validator');
 var connectAssets = require('connect-assets');
 
+var fs = require('fs');
+var UglifyJS = require("uglify-js");
 
 /**
  * Minifying javascript.
  */
-/*
-var fs = require('fs');
-var UglifyJS = require("uglify-js");
 var jsresult = UglifyJS.minify([ 
   "./public/js/lib/jquery-2.1.3.min.js",
   "./public/js/bootstrap.min.js",
@@ -42,7 +41,7 @@ fs.writeFile('./public/js/main.min.js', jsresult.code, function (err) {
     console.log(err);
   } //else {    console.log("Script generated and saved:", 'main.min.js');  }      
 });
-*/
+
 /**
  * Controllers (route handlers).
  */
