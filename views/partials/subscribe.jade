@@ -1,22 +1,15 @@
-block content
-  .page-header
-    h3 Subscribe to news
-  form#subscribeBox(action='subscribe', method='post')
-    input(type='hidden', name='_csrf', value=_csrf)
-    .col-sm-8.col-sm-offset-2
+form#subscribeBox.form-horizontal(action='subscribe', method='post')
+  input(type='hidden', name='_csrf', value=_csrf)
+  .row
+    .col-md-6
       .form-group
-        label.control-label(for='email') Email
-        input#address.form-control(type='email', name='email', placeholder='Email', autofocus=true)
-      .form-group
-        button#subscr.btn.btn-primary(type='submit')
-          span.ion-android-hand
-          | Subscribe
-      .form-group    
-        ol#socialButtons
-          li
-            a.twitter-share-button(href='http://twitter.com/share', data-url='http://www.campaignmonitor.com/', data-count='vertical', data-text='Subscribe to the Inner Love movie project newsletter', data-via='campaignmonitor') Tweet
-          li
-            iframe(src='https://www.facebook.com/plugins/like.php?app_id=240480779309856&href=http%3A%2F%2Fwww.comcine.com%2F&send=false&layout=box_count&width=55&show_faces=false&action=like&colorscheme=light&font&height=90', scrolling='no', frameborder='0', style='border:none; overflow:hidden; width:55px; height:90px;', allowtransparency='true')
-!= js('classie')
-!= js('subscribe')
-  // /Section: subscribe
+        label.control-label.sr-only(for='email') Email Address
+        .input-group
+          span.input-group-addon @
+          input#email.form-control(type='email', name='email', placeholder='Email', aria-describedby='emailStatus')                    
+        span.glyphicon.glyphicon-ok.form-control-feedback(aria-hidden='true')
+        span.glyphicon.glyphicon-remove.form-control-feedback(aria-hidden='true')
+    .col-md-12
+      p.result-block You have successfully subscribed.
+      button#btnSubscribe.btn.btn-skin.pull-right(type='submit')
+        | OK

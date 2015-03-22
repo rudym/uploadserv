@@ -1,0 +1,49 @@
+// Section: bloopers
+section#bloopers.home-section.text-center
+  .heading-about
+    .container
+      .row
+        .col-lg-8.col-lg-offset-2
+          .wow.bounceInDown(data-wow-delay='0.4s')
+            .section-heading
+              h2 Movie Making is Fun 
+              i.fa.fa-2x.fa-angle-down
+  .container
+    .row
+        #myCarousel.carousel.slide(data-ride='carousel')
+          // Indicators
+          ol.carousel-indicators
+            li.active(data-target='#myCarousel', data-slide-to='0')
+            li(data-target='#myCarousel', data-slide-to='1')
+            li(data-target='#myCarousel', data-slide-to='2')
+            li(data-target='#myCarousel', data-slide-to='3')
+          // Wrapper for slides
+          .carousel-inner(role='listbox')
+            #slide1.item.active
+              //img(src='img/bloopers/1.jpg', alt='Chania')
+              .carousel-caption
+                h3 They are here!
+                p Mary opens her eyes in horror. She struggles, trying vainly to break free of Jim's hands. She sees him and opens her mouth to scream. Jim covers her mouth tightly with his palm. JIM'S VOICE They're here!
+            #slide2.item
+              //img(src='img/bloopers/2.jpg', alt='Chania')
+              .carousel-caption
+                h3 In bed
+                p KEN Why did you yell? MOIRA The finale was very unexpected. KEN I experienced something like that when the starship exploded and they re-assembled me, molecule by molecule. Moira's eyes regain their normal size.
+            #slide3.item
+              //img(src='img/bloopers/3.jpg', alt='Flower')
+              .carousel-caption
+                h3 Dance
+                p He does a mixture of African and rock 'n' roll. Or any expressive dance a person like Jim, a nerd hooked on astronomy, might do. JIM I'm a genius. I intercepted and decoded their communications!
+            #slide4.item
+              //img(src='img/bloopers/4.jpg', alt='Flower')
+              .carousel-caption
+                h3 Test
+                p Some text here please
+          // Left and right controls
+          a.left.carousel-control(href='#myCarousel', role='button', data-slide='prev')
+            span.glyphicon.glyphicon-chevron-left(aria-hidden='true')
+            span.sr-only Previous
+          a.right.carousel-control(href='#myCarousel', role='button', data-slide='next')
+            span.glyphicon.glyphicon-chevron-right(aria-hidden='true')
+            span.sr-only Next
+// /Section: bloopers

@@ -1,3 +1,8 @@
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+
 /* ==== Google font ==== */
 @import url('http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic|Montserrat:700|Merriweather:400italic');
 
@@ -309,12 +314,12 @@ hr {
 }
 
 #intro.intro {
-	padding:20% 0 0 0;
+	padding:5% 0 0 0;
 }
 
 .intro .slogan {
 	text-align: center;
-
+  padding-top: 1%;
 }
 
 .intro .page-scroll {
@@ -528,45 +533,6 @@ footer p {
 	color: #f8f8f8;
 }
 
-/* ==========================
-Parallax
-============================= */
-
-#parallax1{	
-	background-image: url(../img/parallax/1.jpg);
-}
-
-#parallax1:after {	
-	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAEklEQVQImWNgYGD4z0AswK4SAFXuAf8EPy+xAAAAAElFTkSuQmCC);
-	content: "";
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	top: 0;
-	opacity: 0.7;
-	z-index: -1;
-}
-
-
-#parallax2{	
-	background-image: url(../img/parallax/2.jpg);
-
-}
-
-#parallax2:after  {	
-	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAEklEQVQImWNgYGD4z0AswK4SAFXuAf8EPy+xAAAAAElFTkSuQmCC);
-	content: "";
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	top: 0;
-	opacity: 0.7;
-	z-index: -1;
-}
-
-
 /* ===========================
 --- Elements
 ============================ */
@@ -713,7 +679,70 @@ Parallax
 }
 
 
-/* Media queries */
+/* ===========================
+--- Carousel
+============================ */
+
+.carousel-control.right, .carousel-control.left {
+  background-image:none;
+}
+
+#myCarousel {
+  background: transparent;
+}
+
+#myCarousel .item { height: 413px;}
+
+.carousel-caption {
+  color: orange;
+}
+#slide1 {
+  background: url('../img/bloopers/1.jpg') top center no-repeat;
+}
+
+#slide2 {
+  background: url('../img/bloopers/2.jpg') top center no-repeat;
+}
+
+#slide3 {
+  background: url('../img/bloopers/3.jpg') top center no-repeat;
+}
+
+#slide4 {
+  background: url('../img/bloopers/4.jpg') top center no-repeat;
+}
+
+
+/* ===========================
+--- Media queries
+============================ */
+
+/* Portrait & Lasndscape phone */
+@media (max-width:480px) {
+
+  .navbar-custom .nav.navbar-nav {
+    background-color: rgba(255,255,255,.4);
+  }
+  
+  .navbar.navbar-custom.navbar-fixed-top {
+    margin-bottom: 30px;
+  }
+  
+  .tp-banner-container {
+    padding-top:40px;
+  }
+
+  .page-scroll a.btn-circle {
+    width: 40px;
+    height: 40px;
+    margin-top: 10px;
+    padding: 7px 0;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    font-size: 20px;
+  }
+  
+}
 
 @media(min-width:767px) {
 
@@ -752,6 +781,8 @@ Parallax
 
 
 }
+
+/* Lasndscape phone to portrait tablet */
 @media (max-width:768px) {
 	
 	.team.boxed-grey {
@@ -762,31 +793,47 @@ Parallax
 		margin-bottom: 30px;
 	}
 
+
+  #myCarousel .item { height: 310px;}
+
+  #slide1 {
+    background: url('../img/bloopers/sml-1.jpg') top center no-repeat;
+  }
+
+  #slide2 {
+    background: url('../img/bloopers/sml-2.jpg') top center no-repeat;
+  }
+
+  #slide3 {
+    background: url('../img/bloopers/sml-3.jpg') top center no-repeat;
+  }
+
+  #slide4 {
+    background: url('../img/bloopers/sml-4.jpg') top center no-repeat;
+  }
+
 	
 }
 
-@media (max-width:480px) {
+/* Large desktop */
+@media (min-width:1200px) {
 
-	.navbar-custom .nav.navbar-nav {
-    background-color: rgba(255,255,255,.4);
-	}
-	
-	.navbar.navbar-custom.navbar-fixed-top {
-		margin-bottom: 30px;
-	}
-	
-	.tp-banner-container {
-		padding-top:40px;
-	}
+  #myCarousel .item { height: 500px;}
 
-	.page-scroll a.btn-circle {
-		width: 40px;
-		height: 40px;
-		margin-top: 10px;
-		padding: 7px 0;
-		border: 2px solid #fff;
-		border-radius: 50%;
-		font-size: 20px;
-	}
-	
+  #slide1 {
+    background: url('../img/bloopers/lrg-1.jpg') top center no-repeat;
+  }
+
+  #slide2 {
+    background: url('../img/bloopers/lrg-2.jpg') top center no-repeat;
+  }
+
+  #slide3 {
+    background: url('../img/bloopers/lrg-3.jpg') top center no-repeat;
+  }
+
+  #slide4 {
+    background: url('../img/bloopers/lrg-4.jpg') top center no-repeat;
+  }
+    
 }

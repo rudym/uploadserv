@@ -7,6 +7,7 @@ section#contact.home-section.text-center
           .wow.bounceInDown(data-wow-delay='0.4s')
             .section-heading
               h2 subscribe to news
+              h6 Start getting updates before the project launch
               i.fa.fa-2x.fa-angle-down
   .container
     .row
@@ -15,21 +16,7 @@ section#contact.home-section.text-center
     .row
       .col-lg-8
         .boxed-grey
-          form#subscribeBox.form-horizontal(action='subscribe', method='post')
-            input(type='hidden', name='_csrf', value=_csrf)
-            .row
-              .col-md-6
-                .form-group
-                  label.control-label.sr-only(for='email') Email Address
-                  .input-group
-                    span.input-group-addon @
-                    input#email.form-control(type='email', name='email', placeholder='Email', aria-describedby='emailStatus')                    
-                  span.glyphicon.glyphicon-ok.form-control-feedback(aria-hidden='true')
-                  span.glyphicon.glyphicon-remove.form-control-feedback(aria-hidden='true')
-              .col-md-12
-                p.result-block You have successfully subscribed.
-                button#btnSubscribe.btn.btn-skin.pull-right(type='submit')
-                  | OK
+          include subscribe.jade
       .col-lg-4
         .widget-contact
           h5 Main Office
@@ -51,14 +38,11 @@ section#contact.home-section.text-center
             br
             ul.company-social
               li.social-facebook
-                a(href='#', target='_blank')
+                a(href='https://www.facebook.com/innerlovefilm', target='_blank')
                   i.fa.fa-facebook
               li.social-twitter
                 a(href='#', target='_blank')
                   i.fa.fa-twitter
-              li.social-dribble
-                a(href='#', target='_blank')
-                  i.fa.fa-dribbble
               li.social-google
                 a(href='#', target='_blank')
                   i.fa.fa-google-plus

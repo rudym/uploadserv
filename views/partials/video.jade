@@ -1,28 +1,20 @@
 // Section: video block
-section#filmtodayblock.home-section.text-center.bg-gray
+section#movieprogress.home-section.text-center.bg-gray
   .heading-about
     .container
       .row
         .col-lg-8.col-lg-offset-2
           .wow.bounceInDown(data-wow-delay='0.4s')
             .section-heading
-              h2 Film Today
+              h2 Movie Progress
               i.fa.fa-2x.fa-angle-down
   .container
     .row
       .container
         .row
-          p
-            a(href='https://s3.amazonaws.com/innerlove/a/Inner+Love+Intro-SD.mp4', frameborder='0') View Full Screen 
-          hr
-        // .row
-      // ./container
-      .container
-        .row
-          .col-md-12
-            video#example_video_1.video-js.vjs-default-skin(controls='', preload='auto', width='812', height='632', poster='https://s3.amazonaws.com/innerlove/a/logo_black.jpg', data-setup='{ "controls": false, "autoplay": false, "preload": "auto" }')
-              source(src='https://s3.amazonaws.com/innerlove/a/Inner+Love+Intro-SD.mp4', type='video/mp4')
-              p.vjs-no-js
-                | To view this video please enable JavaScript, and consider upgrading to a web browser that 
-                a(href='http://videojs.com/html5-video-support/', target='_blank') supports HTML5 video
+          video#progress_video.video-js.vjs-default-skin.vjs-big-play-centered(width='auto', height='360', poster='https://s3.amazonaws.com/innerlove/a/logo_black.jpg', data-setup='{ "controls": true, "autoplay": false, "preload": "false" }')
+            source(src='https://s3.amazonaws.com/innerlove/a/Inner+Love+Intro-HD.mp4', type='video/mp4')
+            p.vjs-no-js
+              | To view this video please enable JavaScript, and consider upgrading to a web browser that 
+              a(href='http://videojs.com/html5-video-support/', target='_blank') supports HTML5 video
 // /Section:  video block
