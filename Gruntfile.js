@@ -2,8 +2,8 @@ var jsfiles = ["./public/js/lib/jquery-2.1.3.min.js",
               "./public/js/bootstrap.min.js",
               "./public/js/lib/jquery.easing.min.js",
               "./public/js/lib/jquery.scrollTo.js",
-              "./public/js/lib/wow.min.js",
-              "./public/js/video-js/video.js",
+              //"./public/js/lib/wow.min.js",
+              "./node_modules/video.js/dist/video-js/video.js",
               "./public/js/main.js"]
 
 module.exports = function(grunt) {
@@ -11,6 +11,13 @@ module.exports = function(grunt) {
   // 1. All configuration goes here 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+
+    copy: {
+      main: {
+        src: './node_modules/video.js/dist/video-js/video-js.swf',
+        dest: './public/img/video-js.swf',
+      },
+    },
 
     concat: {
       options: {
@@ -21,14 +28,14 @@ module.exports = function(grunt) {
       },
       dist: {
         src: jsfiles,
-        dest: './public/js/build/prod.js',
+        dest: './public/js/app.js',
       },
     },
 
     uglify: {
       build: {
-        src: './public/js/build/prod.js',
-        dest: './public/js/build/prod.min.js'
+        src: './public/js/app.js',
+        dest: './public/js/app.min.js'
       }
     },
 
@@ -36,9 +43,9 @@ module.exports = function(grunt) {
       dynamic: {
         files: [{
             expand: true,
-            cwd: './public/img/',
+            cwd: './images/',
             src: ['**/*.{png,jpg,gif}'],
-            dest: './public/img/build/'
+            dest: './public/img/'
         }]
       }
     },
@@ -135,6 +142,7 @@ module.exports = function(grunt) {
   });
 
   // 3. Where we tell Grunt we plan to use this plug-in.
+  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
@@ -153,7 +161,7 @@ module.exports = function(grunt) {
   //grunt.registerTask('publish', ['jade:publish']);
 
   // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
-  //grunt.registerTask('default', ['concat', 'uglify', 'imagemin', 'web']);
+  //grunt.registerTask('default', ['copy', 'concat', 'uglify', 'imagemin']);
   grunt.registerTask('default', ['web', 'watch']);
 
   grunt.registerTask('web', function () {

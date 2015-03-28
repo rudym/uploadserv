@@ -60,6 +60,7 @@
     "twit": "^1.1.20",
     "uglify-js": "^2.4.17",
     "validator": "^3.33.0",
+    "video.js": "^4.12.5",
     "yui": "^3.18.1"
   },
   "devDependencies": {
@@ -68,6 +69,7 @@
     "connect": "^3.3.5",
     "grunt": "^0.4.5",
     "grunt-contrib-concat": "^0.5.1",
+    "grunt-contrib-copy": "^0.8.0",
     "grunt-contrib-imagemin": "^0.9.4",
     "grunt-contrib-jade": "^0.14.1",
     "grunt-contrib-less": "^1.0.0",

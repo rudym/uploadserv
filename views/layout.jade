@@ -10,16 +10,7 @@ html(lang="en")
 
     title #{title} - Inner Love Movie
 
-    // Bootstrap Core CSS
-    link(href='css/bootstrap.min.css', rel='stylesheet', type='text/css')
-    // Fonts
-    link(href='font-awesome/css/font-awesome.min.css', rel='stylesheet', type='text/css')
-    link(href='css/animate.css', rel='stylesheet')
-    // Squad theme CSS
-    link(href='css/style.css', rel='stylesheet')
-    link(href='color/default.css', rel='stylesheet')      
-
-    link(href='js/video-js/video-js.css', rel='stylesheet')
+    != css('main.css')
 
   body#page-top(data-spy='scroll', data-target='.navbar-custom')
     // Preloader
@@ -32,5 +23,4 @@ html(lang="en")
 
     include partials/footer
     
-    //!= js('main.min')
-    != js('build/prod.min')
+    != js('app.min')

@@ -1,6 +1,6 @@
 (function ($) {
 
-	new WOW().init();
+	//new WOW().init();
 
 	jQuery(window).load(function() { 
 		jQuery("#preloader").delay(100).fadeOut("slow");
@@ -38,7 +38,7 @@
 })(jQuery);
 
 //console.log("just some global mainjs code");
-videojs.options.flash.swf = "http://localhost:3000/js/video-js/video-js.swf";
+videojs.options.flash.swf = "http://localhost:3000/img/video-js.swf";
 
 $(document).ready(function() {
 
