@@ -13,10 +13,14 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
 
     copy: {
-      main: {
+      swf: {
         src: './node_modules/video.js/dist/video-js/video-js.swf',
         dest: './public/img/video-js.swf',
       },
+      fonts: {        
+        src: './node_modules/video.js/dist/video-js/font/*',
+        dest: './public/fonts/',
+      }
     },
 
     concat: {
@@ -57,6 +61,10 @@ module.exports = function(grunt) {
           dumpLineNumbers: 'comments',
           relativeUrls: true
         },
+        modifyVars: {
+          imgPath: '../',
+          bgColor: 'red'
+        },
         files: {
           'public/css/main.debug.css': 'public/css/main.less',
         }
@@ -65,8 +73,15 @@ module.exports = function(grunt) {
         options: {
           cleancss: true,
           compress: true,
-          relativeUrls: true
-        },
+          yuicompress: true,
+          optimization: 2,
+          relativeUrls: true,        
+          rootpath: "../",
+          plugins: [
+            new (require('less-plugin-autoprefix'))({browsers: ["last 2 versions"]}),
+            new (require('less-plugin-clean-css'))({advanced: true})
+          ]
+        },      
         files: {
           'public/css/main.css': 'public/css/main.less',
         }
@@ -161,8 +176,8 @@ module.exports = function(grunt) {
   //grunt.registerTask('publish', ['jade:publish']);
 
   // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
-  //grunt.registerTask('default', ['copy', 'concat', 'uglify', 'imagemin']);
-  grunt.registerTask('default', ['web', 'watch']);
+  //grunt.registerTask('default', ['copy', 'concat', 'uglify', 'imagemin', 'less']);
+  //grunt.registerTask('default', ['web', 'watch']);
 
   grunt.registerTask('web', function () {
     grunt.util.spawn(
@@ -172,6 +187,9 @@ module.exports = function(grunt) {
 
     grunt.task.run('watch')
   });
+
+  //grunt.registerTask('default', ['copy', 'concat', 'uglify', 'imagemin', 'less', 'web']);
+  grunt.registerTask('default', ['copy', 'less', 'web']);
 
   //jade static works
   /*

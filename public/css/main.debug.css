@@ -314,8 +314,8 @@ th {
 }
 @font-face {
   font-family: 'Glyphicons Halflings';
-  src: url('vendor/fonts/glyphicons-halflings-regular.eot');
-  src: url('vendor/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('vendor/fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('vendor/fonts/glyphicons-halflings-regular.woff') format('woff'), url('vendor/fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('vendor/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+  src: url('fonts/glyphicons-halflings-regular.eot');
+  src: url('fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('fonts/glyphicons-halflings-regular.woff') format('woff'), url('fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
 /* line 22, public\css\vendor\bootstrap\glyphicons.less */
 .glyphicon {
@@ -8012,8 +8012,8 @@ button.close {
  * -------------------------- */
 @font-face {
   font-family: 'FontAwesome';
-  src: url('vendor/fonts/fontawesome-webfont.eot?v=4.2.0');
-  src: url('vendor/fonts/fontawesome-webfont.eot?#iefix&v=4.2.0') format('embedded-opentype'), url('vendor/fonts/fontawesome-webfont.woff?v=4.2.0') format('woff'), url('vendor/fonts/fontawesome-webfont.ttf?v=4.2.0') format('truetype'), url('vendor/fonts/fontawesome-webfont.svg?v=4.2.0#fontawesomeregular') format('svg');
+  src: url('fonts/fontawesome-webfont.eot?v=4.2.0');
+  src: url('fonts/fontawesome-webfont.eot?#iefix&v=4.2.0') format('embedded-opentype'), url('fonts/fontawesome-webfont.woff?v=4.2.0') format('woff'), url('fonts/fontawesome-webfont.ttf?v=4.2.0') format('truetype'), url('fonts/fontawesome-webfont.svg?v=4.2.0#fontawesomeregular') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -16111,7 +16111,7 @@ a:focus {
 }
 /* line 117, public/css/main.less */
 #loaderInner {
-  background: #ffffff url(../img/spinner.gif) center center no-repeat;
+  background: #ffffff url(/img/spinner.gif) center center no-repeat;
   height: 60px;
   left: 50%;
   margin: -50px 0 0 -50px;
