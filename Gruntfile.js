@@ -1,3 +1,5 @@
+'use strict';
+
 var jsfiles = ["./public/js/lib/jquery-2.1.3.min.js",
               "./public/js/bootstrap.min.js",
               "./public/js/lib/jquery.easing.min.js",
@@ -17,9 +19,11 @@ module.exports = function(grunt) {
         src: './node_modules/video.js/dist/video-js/video-js.swf',
         dest: './public/img/video-js.swf',
       },
-      fonts: {        
-        src: './node_modules/video.js/dist/video-js/font/*',
-        dest: './public/fonts/',
+      fonts: {
+        expand: true,
+        cwd: 'node_modules/video.js/dist/video-js/font/',
+        src: ['**'],
+        dest: 'public/fonts/',
       }
     },
 
@@ -59,12 +63,11 @@ module.exports = function(grunt) {
         options: {
           sourceMap: true,
           dumpLineNumbers: 'comments',
-          relativeUrls: true
-        },
-        modifyVars: {
-          imgPath: '../',
-          bgColor: 'red'
-        },
+          rootpath: "../",
+          modifyVars: {
+            'vjs-font-path': '"/fonts"'
+          },
+        },        
         files: {
           'public/css/main.debug.css': 'public/css/main.less',
         }
@@ -75,8 +78,11 @@ module.exports = function(grunt) {
           compress: true,
           yuicompress: true,
           optimization: 2,
-          relativeUrls: true,        
+          //relativeUrls: true,        
           rootpath: "../",
+          modifyVars: {
+            'vjs-font-path': '"/fonts"'
+          },
           plugins: [
             new (require('less-plugin-autoprefix'))({browsers: ["last 2 versions"]}),
             new (require('less-plugin-clean-css'))({advanced: true})
@@ -145,13 +151,11 @@ module.exports = function(grunt) {
     },
 
     css: {
-      options: {
-        livereload: true,
-      },
       files: ['public/css/*.less'],
       tasks: ['less'],
       options: {
-          spawn: false,
+        livereload: true,
+        spawn: false,
       }
     }
   });
