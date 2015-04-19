@@ -2,9 +2,11 @@
 Hackathon Starter [![Dependency Status](https://david-dm.org/sahat/hackathon-starter/status.svg?style=flat)](https://david-dm.org/sahat/hackathon-starter) [![Build Status](http://img.shields.io/travis/sahat/hackathon-starter.svg?style=flat)](https://travis-ci.org/sahat/hackathon-starter) [![Analytics](https://ga-beacon.appspot.com/UA-47447818-2/hackathon-starter?pixel)](https://github.com/igrigorik/ga-beacon)
 =======================
 
+[![Join the chat at https://gitter.im/sahat/hackathon-starter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/sahat/hackathon-starter?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 **Live Demo**: http://hackathonstarter.herokuapp.com
 
-Jump to [What's new in 3.0.1?](#changelog)
+Jump to [What's new in 3.0.2?](#changelog)
 
 A boilerplate for **Node.js** web applications.
 
@@ -571,7 +573,7 @@ download MongoDB [here](mongodb.org/downloads), or install it via a package mana
 Windows users, read [Install MongoDB on Windows](http://docs.mongodb.org/manual/tutorial/install-mongodb-on-windows/).
 
 **Tip:** If you are always connected to the internet, you could just use
-[MongoLab](https://mongolab.com/) or [MongoHQ](https://www.mongohq.com/) instead
+[MongoLab](https://mongolab.com/) or [Compose](https://www.compose.io/) instead
 of downloading and installing MongoDB locally. You will only need to update the
 `db` property in `config/secrets.js`.
 
@@ -580,7 +582,7 @@ Chances are you haven't changed the *Database URI* in `secrets.js`. If `db` is
 set to `localhost`, it will only work on your machine as long as MongoDB is
 running. When you deploy to Heroku, OpenShift or some other provider, you will not have MongoDB
 running on `localhost`. You need to create an account with [MongoLab](http://mongolab.com)
-or [MongoHQ](http://mongohq.com), then create a free tier database.
+or [Compose](https://www.compose.io/), then create a free tier database.
 See [Deployment](#deployment) for more information on how to setup an account
 and a new database step-by-step with MongoLab.
 
@@ -1123,7 +1125,7 @@ listed below.
 - Finally, in `secrets.js` instead of `db: 'localhost'`, use the following URI with your credentials:
  - `db: 'mongodb://USERNAME:PASSWORD@ds027479.mongolab.com:27479/DATABASE_NAME'`
 
-**Note:** As an alternative to MongoLab, there is also [MongoHQ](http://www.mongohq.com/home).
+**Note:** As an alternative to MongoLab, there is also [Compose](https://www.compose.io/).
 
 
 <img src="http://www.opencloudconf.com/images/openshift_logo.png" width="200">
@@ -1199,6 +1201,18 @@ Also, be sure to check out the [Jump-start your hackathon efforts with DevOps Se
 
 Changelog
 ---------
+
+### 3.0.2 (March 31, 2015)
+- Renamed `navbar.jade` to `header.jade`.
+- Fixed typos in README. Thanks @josephahn and @rstormsf. 
+- Fix radio button alignment on small screens in Profile page.
+- Increased `bcrypt.genSalt()` from **5** to **10**.
+- Updated package dependencies.
+- Updated Font Awesome `4.3.0`.
+- Updated Bootstrap `3.3.4`.
+- Removed Ionicons.
+- Removed unused `User` variable in *controllers/api.js*.
+- Removed Nodejitsu instructions from README.
 
 ### 3.0.1 (February 23, 2015)
 - Reverted Sass to LESS stylesheets. See <a href="https://github.com/sahat/hackathon-starter/issues/233">#233</a>.
